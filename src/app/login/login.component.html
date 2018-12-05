@@ -1,0 +1,58 @@
+<div class="page-header">
+  <div class="container well">
+<div class="row">
+  <div class="col-md-6">
+      <form [formGroup]="userForm" (ngSubmit)="Save(userForm.value)">
+
+    <div class="form-group ">
+
+            <div class="form-group" formGroupName="UserLogin">
+
+ 
+                  <label>Username</label>
+                  
+                    <input type="text"
+                    class="form-control"
+                    placeholder="Enter your username"
+                    formControlName="UserName"
+                    >
+ 
+                    <div class="alert alert-danger" *ngIf="userForm.controls.UserLogin.controls['UserName'].hasError('required')
+                                                          && userForm.controls.UserLogin.controls.UserName.touched
+                    ">
+                          Username is required*
+                     </div>
+ </div>
+ 
+ 
+ 
+                  <div class="form-group" formGroupName="UserLogin">
+                    <label>Password</label>
+                    <input type="text"
+                    class="form-control"
+                    placeholder="Enter your password"
+                    formControlName="Password"
+                    >
+         <div class="alert alert-danger" *ngIf="userForm.controls.UserLogin.controls['Password'].hasError('required')
+                                                         && userForm.controls.UserLogin.controls.Password.touched
+                     ">
+                 'Enter correct password'
+                </div>
+                </div>
+                <button type="submit" class="btn btn-sm btn-danger" [disabled]="!userForm.valid">Sumbit</button>
+
+ 
+
+    </div>
+  
+    
+  
+    
+    
+
+    
+
+    
+
+    
+
